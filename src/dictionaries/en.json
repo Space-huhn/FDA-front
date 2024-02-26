@@ -1,6 +1,6 @@
 {
-  "welcome": {
-    "message1": "Welcome to Our Website",
-    "message2": "We're glad you're here!"
+  "homepage": {
+    "greeting": "Welcome to Our Website",
+    "subheading": "We're glad you're here!"
   }
 }

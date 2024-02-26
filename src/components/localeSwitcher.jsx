@@ -9,7 +9,9 @@ const LocaleSwitcher = () => {
 
   // Function to redirect the user
   const redirectedPathName = (locale) => {
-    if (!pathName) return "/";
+    if (!pathName) {
+      return "/";
+    }
     const segments = pathName.split("/");
     segments[1] = locale;
     return segments.join("/");
