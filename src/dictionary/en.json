@@ -1,0 +1,41 @@
+{
+  "homepage": {
+    "greeting": "Welcome to Our Website",
+    "subheading": "We're glad you're here!"
+  },
+  "login": {
+    "title": "Log In",
+    "subtitle": "Please sign in to your existing account",
+    "emailLabel": "email",
+    "passwordLabel": "password",
+    "remember": "Remember me",
+    "forgotPassword": "Forgot Password",
+    "question": "Don’t have an account?",
+    "singFormLink": "Sign Up",
+    "logButton": "Log In"
+  },
+  "recovery": {
+    "title": "Forgot Password",
+    "subtitle": "Please sign in to your existing account"
+  },
+  "sing": {
+    "title": "Sign Up",
+    "subtitle": "Please sign up to get started",
+    "nameLabel": "name",
+    "emailLabel": "email",
+    "passwordLabel": "password",
+    "confirmPasswordLabel": "Re-Type Password",
+    "singButton": "Sign Up"
+  },
+  "menu": {
+    "home": "Home"
+  },
+  "users": {
+    "title": "this is users list"
+  },
+  "buttons": {
+    "skip": "skip"
+
+
+  }
+}

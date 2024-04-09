@@ -1,0 +1,37 @@
+{
+  "homepage": {
+    "greeting": "Bine ați venit pe pagina noastră",
+    "subheading": "Ne bucurăm să fiți aici!"
+  },
+  "login": {
+    "title": "Autentificare",
+    "subtitle": "Vă rugăm să vă autentificați în contul dvs. existent",
+    "emailLabel": "email",
+    "passwordLabel": "parolă",
+    "remember": "Ține-mă minte",
+    "forgotPassword": "Ați uitat parola",
+    "question": "Nu aveți un cont?",
+    "singFormLink": "Înregistrare",
+    "logButton": "Autentificare"
+  },
+  "recovery": {
+    "title": "Ai uitat parola",
+    "subtitle": "Vă rugăm să vă autentificați în contul dvs. existent"
+  },
+  "sing": {
+    "title": "Înregistrare",
+    "subtitle": "Vă rugăm să vă înregistrați pentru a începe",
+    "nameLabel": "nume",
+    "emailLabel": "email",
+    "passwordLabel": "parolă",
+    "confirmPasswordLabel": "Reintroduceți parola",
+    "singButton": "Înregistrare"
+  },
+  "menu": {
+  "home": "Pagina principală"
+  },
+  "buttons": {
+    "skip": "ocolire"
+  }
+
+}

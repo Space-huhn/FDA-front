@@ -1,17 +1,30 @@
+"use client"
 import Link from "next/link";
-import { getDictionary } from "@/utils/dictionary";
 import LocaleSwitcher from "../localeSwitcher";
 import { Toolbar } from "@mui/material";
 import { HeaderStyled } from "@/components/header/styled";
+import MenuButton from "@/components/UI/MenuButton";
+import Image from 'next/image';
+import Logo from '../icons/LogoWhite.svg';
+import SearchInput from "@/components/UI/ShearchInput";
+import {useState} from "react";
 
-const Index = async ({ lang }) => {
-  const { navigation } = await getDictionary(lang);
+const Index = ({ lang, sideVisible }) => {
+    const [searchValue, setSearchValue] = useState("");
+
+    const setVisibleSidebar = () => sideVisible(true);
 
   return (
     <HeaderStyled>
-      <Toolbar className="toolbar">
-        <Link href={`/${lang}`}>Home</Link>
-        <LocaleSwitcher />
+      <Toolbar color="primary" className="toolbar">
+          <MenuButton clickAction={setVisibleSidebar} />
+        <Link href={`/${lang}`}>
+            <Image src={Logo} alt="Logo" width={75}/>
+        </Link>
+
+        <SearchInput searchValue={searchValue} setSearchValue={setSearchValue}/>
+
+        <LocaleSwitcher currentLang={lang}/>
       </Toolbar>
     </HeaderStyled>
   );

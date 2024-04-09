@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Sen:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,4 +22,16 @@
 @layer utilities {
   .text-balance {
   }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
