@@ -11,7 +11,6 @@ const SearchInput = ({searchValue, setSearchValue}) => {
         setSearchValue("");
     }
 
-
     return (
         <SearchInputStyled>
             <div className="inputWrapper">
@@ -31,9 +30,8 @@ const SearchInput = ({searchValue, setSearchValue}) => {
                         <CancelRoundedIcon className="icon"/>
                     </button>
                     :
-                    ""
+                    <span></span>
                 }
-
             </div>
         </SearchInputStyled>
     );

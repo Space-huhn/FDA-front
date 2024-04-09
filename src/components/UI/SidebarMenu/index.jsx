@@ -1,14 +1,12 @@
 "use client"
 
 import {Drawer} from "@mui/material";
-// import { SidebarMenuStyled } from "@/components/UI/SidebarMenu/styled";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Button from "@mui/material/Button";
 import Link from "next/link";
 import {getDictionary} from "@/utils/dictionary";
 
 const Index = ({open, setOpen}) => {
-    // const dict = await getDictionary(lang);
 
     const setVisibleSidebar = () => setOpen(false);
 

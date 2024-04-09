@@ -16,7 +16,6 @@ const Recovery = () => {
 
     const t = useTranslations('recovery');
 
-
     return (
         <FormContainer title={t('title')} subtitle={t('subtitle')}>
             <FormControl className='gap-6 w-full mb-8'>

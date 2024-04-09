@@ -1,7 +1,6 @@
 "use client"
 
 import Header from "@/components/header";
-// import {PageStyled} from "@/app/[lang]/styled";
 import React, {useEffect, useState} from "react";
 import SidebarMenu from "@/components/UI/SidebarMenu";
 
@@ -12,7 +11,6 @@ const NavigationElements = ({children, dict, lang}) => {
         <>
             <Header lang={lang} sideVisible={setVisible}/>
             <SidebarMenu  open={visible} setOpen={setVisible}/>
-            {/*{children}*/}
         </>
     );
 };
