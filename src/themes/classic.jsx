@@ -48,24 +48,17 @@ const themeClassic = createTheme({
                   fontSize: "13px",
                   userSelect: "none",
                   color: "#646982",
-
               }
           }
         },
         MuiButton: {
             styleOverrides: {
                 defaultProps: {
-                    // disableElevation: true,
-                    // disableRipple: true
                 },
                 root: {
                     fontFamily: "Sen",
                     fontSize: "14px"
                 }
-
-                // root: {
-                // //
-                // }
             }
         }
     }

@@ -16,7 +16,9 @@
   },
   "recovery": {
     "title": "Ai uitat parola",
-    "subtitle": "Vă rugăm să vă autentificați în contul dvs. existent"
+    "subtitle": "Te rugăm să te autentifici în contul tău existent",
+    "emailLabel": "email",
+    "sendButton": "Trimite link-ul"
   },
   "sing": {
     "title": "Înregistrare",

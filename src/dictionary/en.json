@@ -16,7 +16,9 @@
   },
   "recovery": {
     "title": "Forgot Password",
-    "subtitle": "Please sign in to your existing account"
+    "subtitle": "Please sign in to your existing account",
+    "emailLabel": "email",
+    "sendButton": "Send Link"
   },
   "sing": {
     "title": "Sign Up",

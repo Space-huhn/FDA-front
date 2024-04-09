@@ -23,7 +23,6 @@ const SingUp = () => {
     return (
         <FormContainer title={t('title')} subtitle={t('subtitle')}>
             <FormControl className='gap-6 w-full' error>
-
                 <CustomInput label={t('nameLabel')} placeholder={"John Doe"} value={singData.name}
                              onChange={handleChange} type={"name"} name={"name"}/>
 
