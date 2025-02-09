@@ -1,11 +1,18 @@
 "use client"
-import * as React from 'react';
-import Button from '@mui/material/Button';
+import * as React from "react";
+import Button from "@mui/material/Button";
 
-export default function ButtonUsage({children, type, color, onClick}) {
-    return (
-        <Button color={color} variant={type} size="large" onClick={onClick}>
-                {children}
-        </Button>
-    )
+export default function ButtonUsage({children, type, variant, onClick}) {
+  return (
+    <Button
+      type={type}
+      variant={variant}
+      size="large"
+      onClick={onClick}
+    >
+      <span>
+        {children}
+      </span>
+    </Button>
+  )
 }

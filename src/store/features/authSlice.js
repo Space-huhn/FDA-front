@@ -1,19 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
+import {getCookie} from "cookies-next";
 
 export const authSlice = createSlice({
-  name: "auth",
+  name: "user",
   initialState: {
-    isAuth: false,
+    user: getCookie('user') && JSON.parse(getCookie('user')).access_token,
   },
   reducers: {
-    login: (state) => {
-      state.isAuthenticated = true;
+    login: (state, actions) => {
+      return {...state, user: actions.payload};
     },
-    logout: (state) => {
-      state.isAuthenticated = false;
+    logout: () => {
+      return {};
     },
   },
 });
 
-export const { login, logout } = authSlice.actions;
+export const {login, logout} = authSlice.actions;
 export default authSlice.reducer;

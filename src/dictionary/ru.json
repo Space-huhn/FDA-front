@@ -12,13 +12,17 @@
     "forgotPassword": "Забыли пароль",
     "question": "У вас нет учетной записи?",
     "singFormLink": "Регистрация",
-    "logButton": "Войти"
+    "logButton": "Войти",
+    "exception": "Неверный адрес электронной почты или пароль",
+    "notCompleteForm": "Форма не заполнен"
+
   },
-  "recovery":  {
+  "resetPassword":  {
     "title": "Забыли пароль",
     "subtitle": "Пожалуйста, войдите в свою существующую учетную запись",
     "emailLabel": "электронная почта",
-    "sendButton": "Отправить ссылку"
+    "sendButton": "Потвердить",
+    "notCompleteForm": "Форма не заполнен"
   },
   "sing": {
     "title": "Зарегистрироваться",
@@ -27,7 +31,9 @@
     "emailLabel": "электронная почта",
     "passwordLabel": "пароль",
     "confirmPasswordLabel": "Повторите пароль",
-    "singButton": "Зарегистрироваться"
+    "singButton": "Зарегистрироваться",
+    "exception": "Неверный адрес электронной почты или пароль",
+    "notCompleteForm": "Форма не заполнен"
   },
 
   "menu": {

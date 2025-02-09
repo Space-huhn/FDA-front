@@ -12,13 +12,17 @@
     "forgotPassword": "Ați uitat parola",
     "question": "Nu aveți un cont?",
     "singFormLink": "Înregistrare",
-    "logButton": "Autentificare"
+    "logButton": "Autentificare",
+    "exception": "Email sau parolă invalidă",
+    "notCompleteForm": "Formularul nu este complet"
+
   },
-  "recovery": {
+  "resetPassword": {
     "title": "Ai uitat parola",
     "subtitle": "Te rugăm să te autentifici în contul tău existent",
     "emailLabel": "email",
-    "sendButton": "Trimite link-ul"
+    "sendButton": "Confirm",
+    "notCompleteForm": "Formularul nu este complet"
   },
   "sing": {
     "title": "Înregistrare",
@@ -27,7 +31,9 @@
     "emailLabel": "email",
     "passwordLabel": "parolă",
     "confirmPasswordLabel": "Reintroduceți parola",
-    "singButton": "Înregistrare"
+    "singButton": "Înregistrare",
+    "exception": "Email sau parolă invalidă",
+    "notCompleteForm": "Formularul nu este complet"
   },
   "menu": {
   "home": "Pagina principală"

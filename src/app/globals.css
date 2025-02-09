@@ -1,37 +1,177 @@
-@import url('https://fonts.googleapis.com/css?family=Sen:300,400,500,700');
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700');
+/*@import url('https://fonts.googleapis.com/css?family=Sen:300,400,500,700&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap');*/
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*@tailwind base;*/
+/*@tailwind components;*/
+/*@tailwind utilities;*/
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
 }
 
-@layer utilities {
-  .text-balance {
-  }
-}
+/*@layer utilities {*/
+/*  .text-balance {}*/
+/*}*/
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+/*Обнуление*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+body,
+main,
+.wrapper {
+    height: 100%;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    line-height: 1;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-weight: normal;
+    font-size: 100%;
+    font-size: 14px;
+}
+
+html {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/*--------------------*/
+
+.wrapper {
+    min-height: 100vh;
+    max-width: 1440px;
+    width: 100%;
+    padding: 20px !important;
+    margin: 0 auto;
+}
+
+body {
+    padding: 0 !important;
+}
+
+.background {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*--------------------*/
+*::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.01);
+    background-color: #F6F6F6;
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F6F6F6;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear,
+    left bottom,
+    left top,
+    color-stop(0.44, #A0A5BA),
+    color-stop(0.72, #646982),
+    color-stop(0.86, #42434f));
 }

@@ -1,0 +1,20 @@
+.containerStyles {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative
+}
+
+.circularStyles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: rotateAnimation 20s infinite linear;
+}
+
+@keyframes rotateAnimation {
+    0%   {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}

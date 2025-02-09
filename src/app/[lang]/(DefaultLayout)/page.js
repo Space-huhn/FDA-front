@@ -1,42 +1,62 @@
+// "use client"
+// import SearchInput from '@/components/UI/SearchInput';
+// import {useTranslations} from "next-intl";
+// import React, {useState} from 'react';
 import {Typography} from "@mui/material";
-import ButtonUsage from "@/components/UI/Button";
-import CustomInput from "@/components/UI/Input";
-import CodeInput from "@/components/UI/CodeInput";
-import SearchInput from "@/components/UI/ShearchInput";
 import {PageStyled} from "@/app/[lang]/(DefaultLayout)/styled";
-import {useTranslations} from "next-intl";
+import ListBand from "@/components/ListBand";
+import api from "@/services/api";
+// import FoodPreview from "@/components/FoodPreview";
+// import {DefaultLoadingElement} from "@react-google-maps/api/src/LoadScript";
+// import Loader from "@/components/UI/Loader";
 
-const Home = ({ params: { lang } }) => {
-  // const dict = await getDictionary(lang);
-    // const test = async () => {
-    //     const response = await fetch("http://api.loc:8085/api/health")
-    //     const movies = await response.json();
-    //     console.log(movies.health);
-    // }
-    // await test()
+const Home = ({params: {lang}}) => {
+  // const t = useTranslations("homepage");
+  // const info = useSelector(state => state.me);
+  // console.log(getCookie('user'));
 
-    const t = useTranslations('homepage');
+  // const [searchValue, setSearchValue] = useState('');
+
+  const test = async () => {
+    try {
+      const res = await api.products().getProducts();
+      console.log(res)
+      return res.data;
+    } catch (error) {
+
+      console.log(error)
+    }
+  }
+
+  test()
+
+  // const item = await getItem(id)
+
 
   return (
-    <PageStyled>
-      <Typography variant="h3" align="center">
-          {t('subheading')}
-          {/*{dict.homepage.greeting}*/}
-      </Typography>
-      <Typography variant="body1" align="center">
-          {/*{dict.homepage.subheading}*/}
-      </Typography>
 
-        <ButtonUsage color={"containedType"} type={"contained"}>Get Started</ButtonUsage>
-        <ButtonUsage color={"textType"} type={"text"}>Skip</ButtonUsage>
-        <ButtonUsage color={"outlinedType"} type={"outlined"}>Skip</ButtonUsage>
-        <CustomInput label={"email"} placeholder={"example@gmail.com"}
-                     type={"email"}/>
-        <CustomInput label={"name"} placeholder={"John doe"}
-                     type={"text"}/>
-        <CustomInput label={"Password"} placeholder={"••••••••"}
-                     type={"password"}/>
-        <CodeInput label={"code"}/>
+    <PageStyled>
+
+      <div className="top">
+        <div className="hiUser">
+          <Typography variant="subtitle2" color="dark">Hey Halal,</Typography>
+          <Typography variant="h3" color="dark">Good Afternoon!</Typography>
+          {/*//     </div>*/}
+          {/*//     /!*<SearchInput searchValue={searchValue} setSearchValue={setSearchValue}/>*!/*/}
+        </div>
+        {/*//*/}
+        {/*//   <FoodPreview food="Burger Bistro " restaurant="Rose garden " price="$40"/>*/}
+        {/*//*/}
+        {/*//   <div className='categories'>*/}
+        <ListBand/>
+      </div>
+
+
+      {/*  //<PageStyled>*/}
+      {/*    //<Onboarding />*/}
+      {/*    // <Onboarding />*/}
+      {/*    //</PageStyled>*/}
+
     </PageStyled>
   );
 };

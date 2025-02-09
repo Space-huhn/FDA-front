@@ -12,13 +12,16 @@
     "forgotPassword": "Forgot Password",
     "question": "Don’t have an account?",
     "singFormLink": "Sign Up",
-    "logButton": "Log In"
+    "logButton": "Log In",
+    "exception": "Invalid email or password",
+    "notCompleteForm": "Form is not complete"
   },
-  "recovery": {
+  "resetPassword": {
     "title": "Forgot Password",
     "subtitle": "Please sign in to your existing account",
     "emailLabel": "email",
-    "sendButton": "Send Link"
+    "sendButton": "Confirm",
+    "notCompleteForm": "Form is not complete"
   },
   "sing": {
     "title": "Sign Up",
@@ -27,7 +30,20 @@
     "emailLabel": "email",
     "passwordLabel": "password",
     "confirmPasswordLabel": "Re-Type Password",
-    "singButton": "Sign Up"
+    "singButton": "Sign Up",
+    "exception": "Invalid email or password",
+    "notCompleteForm": "Form is not complete"
+  },
+  "confirmEmail": {
+    "title": "Confirm Email",
+    "subtitle": "This is steel your mail address?",
+    "nameLabel": "name",
+    "emailLabel": "email",
+    "passwordLabel": "password",
+    "confirmPasswordLabel": "Re-Type Password",
+    "confirmButton": "Send confirmation mail",
+    "exception": "Invalid email or password",
+    "notCompleteForm": "Form is not complete"
   },
   "menu": {
     "home": "Home"
@@ -37,7 +53,5 @@
   },
   "buttons": {
     "skip": "skip"
-
-
   }
 }

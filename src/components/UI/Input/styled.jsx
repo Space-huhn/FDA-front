@@ -1,26 +1,50 @@
 "use client"
 import styled from "@emotion/styled";
 
-export const InputStyled = styled("div")(() => ({
-   width: "100%",
-   maxWidth: "370px",
+export const InputStyled = styled("div")(({theme: {palette}}) => ({
+  width: '100%',
+  maxWidth: '330px',
+  margin: '0 auto',
 
-   ".label": {
-      fontSize: "13px",
-      textTransform: "uppercase",
-      color: "#32343E",
-   },
-   ".icon": {
-      color: "#B4B9CA",
-   },
-   ".inputWrapper": {
-      position: "relative",
-   },
-   ".showButton": {
-      position: "absolute",
-      right: "10px",
-      zIndex: "10",
-      top: "50%",
-      transform: "translateY(-50%)",
-   },
+  '.icon': {
+    color: palette.colorText.main,
+    background: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  '.input': {
+    backgroundColor: palette.colorCanvas.dark,
+    padding: '10px',
+    borderRadius: '8px',
+    fontSize: '16px',
+    color: palette.colorText.main,
+    outlineWidth: '1px',
+    width: '100%',
+  },
+
+  '.input:placeholder': {
+    color: palette.colorText.main,
+    padding: '10px',
+    borderRadius: '8px',
+  },
+
+  '.inputWrapper': {
+    position: 'relative',
+    marginTop: '10px',
+  },
+
+  '.showButton': {
+    position: 'absolute',
+    right: '10px',
+    zIndex: '10',
+    top: '50%',
+    background: 'none',
+    transform: 'translateY(-50%)',
+  },
+
+  '.error': {
+    outline: '2px solid red'
+  }
 }))

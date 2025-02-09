@@ -1,86 +1,152 @@
 "use client"
-import React, {useState} from 'react';
-import CustomInput from "@/components/UI/Input";
-import {Checkbox, FormControl, FormControlLabel, Typography} from "@mui/material";
-import Link from "next/link";
 import ButtonUsage from "@/components/UI/Button";
+import CustomCheckbox from "@/components/UI/Checkbox";
+import FormPageContainer from "@/components/UI/FormPageContainer";
+import CustomInput from "@/components/UI/Input";
+import api from "@/services/api";
+import {login} from "@/store/features/authSlice";
+import {Alert, FormControl, Typography} from "@mui/material";
 import {useTranslations} from "next-intl";
-import FormContainer from "@/components/UI/FormContainer";
+import {useRouter} from "next/navigation";
+import {useState} from "react";
+import {useForm} from "react-hook-form";
+import {useDispatch} from "react-redux";
+import Link from "next/link";
+import {jwtDecode} from "jwt-decode";
+import {deleteCookie, setCookie} from "cookies-next";
+import {saveProfile} from "@/store/features/profileSlice";
 
-const Login = ({lang}) => {
-    const [rememberPass, setRememberPass] = useState(false);
+const Login = () => {
+  const [rememberPass, setRememberPass] = useState(false);
+  const [responseError, setResponseError] = useState(false);
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const t = useTranslations("login");
 
-    const [loginData, setLoginData] = useState({email: "", password: ""})
+  const {
+    register,
+    handleSubmit,
+    formState: {errors},
+  } = useForm({
+    defaultValues: {
+      email: "",
+      password: ""
+    },
+  })
 
-    const handleClick = () => {
-        console.log(loginData)
+  const onSubmit = async (data) => {
+    try {
+      const user = await api.user().login({"email": data.username, "password": data.password});
+      const decoded = jwtDecode(user.token);
+
+      localStorage.removeItem('authToken');
+      localStorage.setItem('authToken', user.token);
+
+      const profile = await api.user().profile(decoded.id)
+      const profileData = {access_token: user.token, profile: profile}
+
+      dispatch(login());
+      dispatch(saveProfile(profileData));
+
+      deleteCookie("user");
+      setCookie("user", profileData);
+
+      setResponseError(false);
+      router.replace("/");
+    } catch (error) {
+      console.log(error);
+      setResponseError(true);
     }
+  }
 
-    const handleRememberMe = () => {
-        setRememberPass(!rememberPass)
-    }
+  const onError = (data) => console.log(data)
 
-    const handleChange = (value, key) => {
-        setLoginData({...loginData, [key]: value })
-    }
+  const toggleHandleRememberMe = () => {
+    setRememberPass(!rememberPass)
+  }
 
-    const toggleRememberPassword = () => {
-        setRememberPass(!rememberPass)
-    }
+  return (
+    <>
+      <FormPageContainer title={t("title")} subtitle={t("subtitle")}>
+        <FormControl>
+          <CustomInput
+            label={t("emailLabel")}
+            placeholder="example@gmail.com"
+            type={"email"}
+            name={"username"}
+            register={register}
+            required
+            error={errors.username}
+          />
 
-    const t = useTranslations('login');
+          <CustomInput
+            label={t("passwordLabel")}
+            placeholder="••••••••"
+            type={"password"}
+            name={"password"}
+            register={register}
+            required
+            error={errors.password}
+          />
 
-    return (
-        <FormContainer title={t('title')} subtitle={t('subtitle')}>
+          {(errors.email || errors.password) && (
+            <Alert severity="error">{t("notCompleteForm")}</Alert>
+          )}
 
-            <FormControl className='gap-6' error>
+          {responseError && (
+            <Alert severity="error">{t("exception")}</Alert>
+          )}
 
-                <CustomInput label={t('emailLabel')}
-                             placeholder={"example@gmail.com"}
-                             type={"email"}
-                             onChange={handleChange}
-                             value={loginData.email}/>
+          <div className="bottomFormNavigation">
+            <div className="rememberMe">
+              <CustomCheckbox
+                checked={rememberPass}
+                onChange={toggleHandleRememberMe}
+                label={t("remember")}
+              />
 
-                <CustomInput label={t('passwordLabel')}
-                             placeholder={"••••••••"}
-                             type={"password"}
-                             onChange={handleChange}
-                             value={loginData.password}/>
-
-                <div className="flex justify-between items-center">
-                    <FormControlLabel
-                            className="text-[#7E8A97]"
-
-                            control={<Checkbox checked={rememberPass}
-                                             className="text-[#E3EBF2]"
-                                             onChange={handleRememberMe}/>}
-
-                            label={t('remember')}/>
-                    <Link href={'login/recovery'}
-                          className="text-[#FF7622] text-sm">
-                          {t('forgotPassword')}
-                    </Link>
-                </div>
-
-                <ButtonUsage type="contained"
-                             color="secondary"
-                             onClick={handleClick}>
-                            {t('logButton')}
-                </ButtonUsage>
-            </FormControl>
-
-            <div className="flex justify-center gap-2 items-center mt-8">
-                    <Typography variant="span" className="text-[#646982]">
-                        {t('question')}
-                    </Typography>
-                <Link href={'login/sing'} color="secondary" className="text-[#FF7622] uppercase text-sm">
-                    {t('singFormLink')}
-                </Link>
+              <Link href={"reset-password-form"}>
+                <Typography
+                  variant="subtitle2"
+                  color="companyAccentMain"
+                >
+                  {t("forgotPassword")}
+                </Typography>
+              </Link>
             </div>
-        </FormContainer>
-    );
+
+            <ButtonUsage
+              variant="contained"
+              type="submit"
+              color="secondary"
+              onClick={handleSubmit(onSubmit)}
+            >
+              {t("logButton")}
+            </ButtonUsage>
+
+            <div className="singIn">
+              <Typography
+                variant="subtitle2"
+                color="dark"
+              >
+                {t("question")}
+              </Typography>
+
+              <Link href={"sing"}>
+                <Typography
+                  variant="h4"
+                  color="companyAccentMain"
+                  textTransform="uppercase"
+                >
+                  {t("singFormLink")}
+                </Typography>
+              </Link>
+            </div>
+          </div>
+        </FormControl>
+      </FormPageContainer>
+    </>
+  );
 };
 
 export default Login;
-
-

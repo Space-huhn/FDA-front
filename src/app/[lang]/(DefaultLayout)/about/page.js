@@ -1,10 +1,8 @@
-import {Typography} from "@mui/material";
-import ButtonUsage from "@/components/UI/Button";
-import CustomInput from "@/components/UI/Input";
+import { PageStyled } from "@/app/[lang]/(DefaultLayout)/styled";
 import CodeInput from "@/components/UI/CodeInput";
-import SearchInput from "@/components/UI/ShearchInput";
-import {PageStyled} from "@/app/[lang]/(DefaultLayout)/styled";
-import {useTranslations} from "next-intl";
+import CustomInput from "@/components/UI/Input";
+import { Typography } from "@mui/material";
+import { useTranslations } from "next-intl";
 
 const Home = ({ params: { lang } }) => {
   // const dict = await getDictionary(lang);
@@ -31,9 +29,9 @@ const Home = ({ params: { lang } }) => {
           {/*{dict.homepage.subheading}*/}
       </Typography>
 
-        <ButtonUsage color={"containedType"} type={"contained"}>Get Started</ButtonUsage>
-        <ButtonUsage color={"textType"} type={"text"}>Skip</ButtonUsage>
-        <ButtonUsage color={"outlinedType"} type={"outlined"}>Skip</ButtonUsage>
+        {/*<ButtonUsage color={"containedType"} type={"contained"}>Get Started</ButtonUsage>*/}
+        {/*<ButtonUsage color={"textType"} type={"text"}>Skip</ButtonUsage>*/}
+        {/*<ButtonUsage color={"outlinedType"} type={"outlined"}>Skip</ButtonUsage>*/}
         <CustomInput label={"email"} placeholder={"example@gmail.com"}
                      type={"email"}/>
         <CustomInput label={"name"} placeholder={"John doe"}
