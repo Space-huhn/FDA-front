@@ -1,17 +1,30 @@
 import React from 'react';
-import Logo from "@/components/UI/IconsComponents/Logo";
-import LoaderEllipse from "@/components/UI/IconsComponents/LoaderEllipse";
 import {StyledLoader} from "@/components/UI/Loader/styled";
+import LoaderEllipse from "@/components/UI/IconsComponents/LoaderEllipse";
+import AnimatedLogo from "@/components/UI/IconsComponents/AnimatedLogo";
 
 const Loader = () => {
   return (
     <StyledLoader>
-      <div className="logo">
-        <Logo/>
+      <div className={'logo'}>
+        <AnimatedLogo/>
       </div>
 
-      <div className="loader">
-        <LoaderEllipse/>
+      <div className={'container'}>
+        <div className={'loaderOne'}>
+          <LoaderEllipse
+            rotationSpeed={14}
+            color={{firstColor: '#1e1e2e1a', secondColor: '#1e1e2e33'}}
+          />
+        </div>
+
+        <div className={'loaderTwo'}>
+          <LoaderEllipse
+            rotationSpeed={22}
+            rotationDirection={'reverse'}
+            color={{firstColor: '#FFD88C', secondColor: '#FF7622'}}
+          />
+        </div>
       </div>
     </StyledLoader>
   );

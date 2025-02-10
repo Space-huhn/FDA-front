@@ -40,7 +40,6 @@ const ResetPasswordForm = () => {
       const check = await api.user().check({email: data.email});
       isCheck(check)
 
-
       setResponseError(false);
       // router.replace("/");
     } catch (error) {

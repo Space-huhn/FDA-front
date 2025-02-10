@@ -4,8 +4,8 @@
 // import React, {useState} from 'react';
 import {Typography} from "@mui/material";
 import {PageStyled} from "@/app/[lang]/(DefaultLayout)/styled";
-import ListBand from "@/components/ListBand";
 import api from "@/services/api";
+import Loader from "@/components/UI/Loader";
 // import FoodPreview from "@/components/FoodPreview";
 // import {DefaultLoadingElement} from "@react-google-maps/api/src/LoadScript";
 // import Loader from "@/components/UI/Loader";
@@ -37,18 +37,25 @@ const Home = ({params: {lang}}) => {
 
     <PageStyled>
 
+
       <div className="top">
         <div className="hiUser">
           <Typography variant="subtitle2" color="dark">Hey Halal,</Typography>
           <Typography variant="h3" color="dark">Good Afternoon!</Typography>
           {/*//     </div>*/}
           {/*//     /!*<SearchInput searchValue={searchValue} setSearchValue={setSearchValue}/>*!/*/}
+
+
         </div>
+
+        <Loader/>
+        
         {/*//*/}
         {/*//   <FoodPreview food="Burger Bistro " restaurant="Rose garden " price="$40"/>*/}
         {/*//*/}
         {/*//   <div className='categories'>*/}
-        <ListBand/>
+        {/*<ListBand/>*/}
+
       </div>
 
 
