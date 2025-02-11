@@ -1,12 +1,12 @@
 "use client"
 import styled from "@emotion/styled";
-import {hidden} from "next/dist/lib/picocolors";
 
 export const StyledLoader = styled('div')(() => ({
-  // position: 'relative',
   width: '100vw',
   height: '100vh',
   position: 'absolute',
+  backgroundColor: '#fff',
+  zIndex: 1200,
   top: 0,
   left: 0,
   display: 'flex',
@@ -25,21 +25,10 @@ export const StyledLoader = styled('div')(() => ({
     alignItems: 'center',
   },
 
-
-  // ".logo": {
-  //   position: "absolute",
-  //   top: '160px',
-  //   left: '170px',
-  //
-  //   'svg': {
-  //     width: '150px',
-  //   }
-  // },
-
   ".container .loaderOne": {
     display: 'flex',
     alignSelf: 'flex-start',
-    transform: 'scale(5)'
+    transform: 'scale(5)',
   },
 
   ".container .loaderTwo": {
@@ -48,9 +37,16 @@ export const StyledLoader = styled('div')(() => ({
     transform: 'scale(9)'
   },
 
+  ["@media (min-width: 769px)"]: {
+    ".container .loaderTwo, .container .loaderOne": {
+      display: 'none',
+    },
+  },
+
   '.logo': {
     position: 'absolute',
     zIndex: '50',
     transform: 'scale(1.3)'
-  }
+  },
 }))
+

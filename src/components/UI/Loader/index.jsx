@@ -15,6 +15,7 @@ const Loader = () => {
           <LoaderEllipse
             rotationSpeed={14}
             color={{firstColor: '#1e1e2e1a', secondColor: '#1e1e2e33'}}
+            fadeInDirection={'top'}
           />
         </div>
 
@@ -23,6 +24,8 @@ const Loader = () => {
             rotationSpeed={22}
             rotationDirection={'reverse'}
             color={{firstColor: '#FFD88C', secondColor: '#FF7622'}}
+            fadeInDirection={'bottom'}
+
           />
         </div>
       </div>

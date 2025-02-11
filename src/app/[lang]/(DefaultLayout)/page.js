@@ -1,4 +1,4 @@
-// "use client"
+"use client"
 // import SearchInput from '@/components/UI/SearchInput';
 // import {useTranslations} from "next-intl";
 // import React, {useState} from 'react';
@@ -6,6 +6,7 @@ import {Typography} from "@mui/material";
 import {PageStyled} from "@/app/[lang]/(DefaultLayout)/styled";
 import api from "@/services/api";
 import Loader from "@/components/UI/Loader";
+import {useState} from "react";
 // import FoodPreview from "@/components/FoodPreview";
 // import {DefaultLoadingElement} from "@react-google-maps/api/src/LoadScript";
 // import Loader from "@/components/UI/Loader";
@@ -16,6 +17,7 @@ const Home = ({params: {lang}}) => {
   // console.log(getCookie('user'));
 
   // const [searchValue, setSearchValue] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
   const test = async () => {
     try {
@@ -31,40 +33,31 @@ const Home = ({params: {lang}}) => {
   test()
 
   // const item = await getItem(id)
-
-
   return (
+    isLoading ?
+      <Loader/>
+      :
+      <PageStyled>
+        <div className="top">
+          <div className="hiUser">
+            <Typography variant="subtitle2" color="dark">Hey Halal,</Typography>
+            <Typography variant="h3" color="dark">Good Afternoon!</Typography>
+            {/*//     </div>*/}
+            {/*//     /!*<SearchInput searchValue={searchValue} setSearchValue={setSearchValue}/>*!/*/}
 
-    <PageStyled>
-
-
-      <div className="top">
-        <div className="hiUser">
-          <Typography variant="subtitle2" color="dark">Hey Halal,</Typography>
-          <Typography variant="h3" color="dark">Good Afternoon!</Typography>
-          {/*//     </div>*/}
-          {/*//     /!*<SearchInput searchValue={searchValue} setSearchValue={setSearchValue}/>*!/*/}
-
+          </div>
+          {/*//   <FoodPreview food="Burger Bistro " restaurant="Rose garden " price="$40"/>*/}
+          {/*//*/}
+          {/*//   <div className='categories'>*/}
+          {/*<ListBand/>*/}
 
         </div>
+        {/*  //<PageStyled>*/}
+        {/*    //<Onboarding />*/}
+        {/*    // <Onboarding />*/}
+        {/*    //</PageStyled>*/}
 
-        <Loader/>
-        
-        {/*//*/}
-        {/*//   <FoodPreview food="Burger Bistro " restaurant="Rose garden " price="$40"/>*/}
-        {/*//*/}
-        {/*//   <div className='categories'>*/}
-        {/*<ListBand/>*/}
-
-      </div>
-
-
-      {/*  //<PageStyled>*/}
-      {/*    //<Onboarding />*/}
-      {/*    // <Onboarding />*/}
-      {/*    //</PageStyled>*/}
-
-    </PageStyled>
+      </PageStyled>
   );
 };
 
