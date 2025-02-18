@@ -6,7 +6,12 @@ import {Typography} from "@mui/material";
 import {PageStyled} from "@/app/[lang]/(DefaultLayout)/styled";
 import api from "@/services/api";
 import Loader from "@/components/UI/Loader";
-import {useState} from "react";
+import React, {useState} from "react";
+import Category from "@/components/UI/Category/v1";
+import {categories} from "@/static/categories"
+import {useMultipleToggleWithReset} from "@/utils/hooks/hooks";
+import ListBand from "@/components/ListBand";
+
 // import FoodPreview from "@/components/FoodPreview";
 // import {DefaultLoadingElement} from "@react-google-maps/api/src/LoadScript";
 // import Loader from "@/components/UI/Loader";
@@ -17,7 +22,8 @@ const Home = ({params: {lang}}) => {
   // console.log(getCookie('user'));
 
   // const [searchValue, setSearchValue] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const test = async () => {
     try {
@@ -30,6 +36,7 @@ const Home = ({params: {lang}}) => {
     }
   }
 
+
   test()
 
   // const item = await getItem(id)
@@ -38,20 +45,23 @@ const Home = ({params: {lang}}) => {
       <Loader/>
       :
       <PageStyled>
-        <div className="top">
-          <div className="hiUser">
-            <Typography variant="subtitle2" color="dark">Hey Halal,</Typography>
-            <Typography variant="h3" color="dark">Good Afternoon!</Typography>
-            {/*//     </div>*/}
-            {/*//     /!*<SearchInput searchValue={searchValue} setSearchValue={setSearchValue}/>*!/*/}
 
-          </div>
-          {/*//   <FoodPreview food="Burger Bistro " restaurant="Rose garden " price="$40"/>*/}
-          {/*//*/}
-          {/*//   <div className='categories'>*/}
-          {/*<ListBand/>*/}
+        <ListBand/>
 
-        </div>
+        {/*<div className="top">*/}
+        {/*<div className="hiUser">*/}
+        {/*<Typography variant="subtitle2" color="dark">Hey Halal,</Typography>*/}
+        {/*<Typography variant="h3" color="dark">Good Afternoon!</Typography>*/}
+        {/*//     </div>*/}
+        {/*//     /!*<SearchInput searchValue={searchValue} setSearchValue={setSearchValue}/>*!/*/}
+
+        {/*</div>*/}
+        {/*//   <FoodPreview food="Burger Bistro " restaurant="Rose garden " price="$40"/>*/}
+        {/*//*/}
+        {/*//   <div className='categories'>*/}
+        {/*<ListBand/>*/}
+
+        {/*</div>*/}
         {/*  //<PageStyled>*/}
         {/*    //<Onboarding />*/}
         {/*    // <Onboarding />*/}
